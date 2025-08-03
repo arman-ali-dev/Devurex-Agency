@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
+
+:root {
+  --primary-color: #5271ff;
+  --bg-color: #292929;
+  --sidebar-color: #4f4f4f;
+  --text-color: #ffffff;
+}
+* {
+  font-family: "Jost", sans-serif !important;
+}
+.effect-button {
+  outline: none;
+  box-shadow: none;
+}
+
+.effect-button:focus {
+  outline: none;
+  box-shadow: none;
+}
+:focus-visible {
+  outline: none;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  width: 6px;
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+  border-radius: 20px;
+  border-bottom: 410px solid transparent;
+  background-clip: padding-box;
+}
+
+.effect-button {
+  display: inline-block;
+  color: #fff;
+  background-color: var(--primary-color);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  text-decoration: none;
+}
+
+.effect-button::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10rem;
+  background-color: var(--primary-color);
+  z-index: -2;
+}
+
+.effect-button::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background-color: var(--sidebar-color);
+  transition: all 0.4s ease;
+  border-radius: 10rem;
+  z-index: -1;
+}
+
+.effect-button:hover::before {
+  height: 100%;
+}
+
+@keyframes subtleShake {
+  0% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+  25% {
+    transform: translate(1px, -10px) rotate(-0.1deg);
+  }
+  50% {
+    transform: translate(-1px, 10px) rotate(0.1deg);
+  }
+  75% {
+    transform: translate(20px, 1px) rotate(-0.1deg);
+  }
+  100% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+}
+
+.animate-shake {
+  animation: subtleShake 2s infinite ease-in-out;
+}
