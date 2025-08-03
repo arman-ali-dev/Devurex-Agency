@@ -16,7 +16,7 @@ function App() {
         </div>
 
         {/* Main content container */}
-        <div className="flex-1 ml-[23%] pt-30">
+        <div className="flex-1 ml-[22%] pt-30">
           <AboutUs />
         </div>
       </div>
